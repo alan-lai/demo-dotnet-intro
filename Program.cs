@@ -5,7 +5,25 @@ namespace list_quickstart
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) {
+            WorkingWithNumbers();
+            // WorkingWithStrings();
+        }
+
+        public static void WorkingWithNumbers() {
+            var fibonacciNumbers = new List<int> { 1, 1 };
+            while(fibonacciNumbers.Count < 20) {
+                var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];
+                var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
+                fibonacciNumbers.Add(previous + previous2);
+            }
+
+            foreach (var number in fibonacciNumbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+        public static void WorkingWithStrings()
         {
             var names = new List<string> { "Alan", "Ana", "Felipe" };
             foreach(var name in names) {
